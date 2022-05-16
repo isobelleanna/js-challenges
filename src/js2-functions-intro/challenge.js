@@ -18,6 +18,7 @@
  */
 export const createFullName = (firstName, lastName) => {
   /* Write your code here */
+  return `${firstName} ${lastName}`;
 };
 
 /**
@@ -28,8 +29,13 @@ export const createFullName = (firstName, lastName) => {
  * @param {number} number2 200
  * @returns {number} 100
  */
-export const findSmallestNumber = (/* Write the parameters here */) => {
+export const findSmallestNumber = (num1, num2) => {
   /* Write your code here */
+  if(num1 < num2){
+    return num1;
+  }else{
+    return num2;
+  };
 };
 
 /**
@@ -40,8 +46,9 @@ export const findSmallestNumber = (/* Write the parameters here */) => {
  * @param {number} number2 6
  * @returns {number} 18
  */
-export const multiplyNumbers = (/* Write the parameters here */) => {
+export const multiplyNumbers = (number1, number2) => {
   /* Write your code here */
+  return number1 * number2;
 };
 
 /* Intermediate Challenges */
@@ -58,6 +65,13 @@ export const multiplyNumbers = (/* Write the parameters here */) => {
  */
 export const checkIfNewHighScore = (score, highScore) => {
   /* Write your code here */
+  if (highScore < score) {
+    return "You got a new high score!";
+  }else if (highScore === score) {
+    return "So close!";
+  }else {
+    return "Better luck next time!"
+  }
 };
 
 /**
@@ -68,6 +82,8 @@ export const checkIfNewHighScore = (score, highScore) => {
  */
 export const celsiusToFahrenheit = (tempInCelsius) => {
   /* Write your code here */
+  const fahrenheit = Math.round((tempInCelsius * 9/5) + 32);
+  return `${tempInCelsius} degrees celsius is ${fahrenheit} degrees fahrenheit`;
 };
 
 /**
@@ -81,6 +97,9 @@ export const celsiusToFahrenheit = (tempInCelsius) => {
  */
 export const calculateLifetimeSupply = (snickersPerDay, age, maxAge) => {
   /* Write your code here */
+    const yearsLeft = maxAge - age;
+    const total = yearsLeft * snickersPerDay * 365;
+    return total;
 };
 
 /* Advanced Challenges */
@@ -101,6 +120,22 @@ export const calculateLifetimeSupply = (snickersPerDay, age, maxAge) => {
  */
 export const getGrade = (score) => {
   /* Write your code here */
+  if (score > 100 || score < 0 || typeof score != "number") {
+    return "Score unavailable"
+  }
+  if (score >= 80 && score <= 100) {
+    return "A";
+  }else if (score >= 70 && score <= 79) {
+    return "B";
+}else if (score >= 60 && score <= 69) {
+    return "C";
+}else if (score >= 50 && score <= 59) {
+    return "D";
+}else if (score >= 40 && score <= 49) {
+    return "E";
+}else if (score >= 0 && score <= 39) {
+    return "F";
+}
 };
 
 /**
@@ -111,6 +146,8 @@ export const getGrade = (score) => {
  */
 export const calculateAreaOfCircle = (radius) => {
   /* Write your code here */
+  let area = Math.PI * (radius * radius);
+  return Math.round(area * 100) / 100;
 };
 
 /* Expert Challenge */
