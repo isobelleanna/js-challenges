@@ -22,7 +22,8 @@
  */
 
 export const removeFalseValues = (booleanArr) => {
-  return;
+  const filteredArray = booleanArr.filter(booleanArrItem => booleanArrItem)
+  return filteredArray;
 };
 
 /**
@@ -34,7 +35,8 @@ export const removeFalseValues = (booleanArr) => {
  */
 
 export const createPercentageList = (numbersArr) => {
-  return;
+  const percentageMap = numbersArr.map(number => number * 100 + "%")
+  return percentageMap;
 };
 
 /**
@@ -47,7 +49,8 @@ export const createPercentageList = (numbersArr) => {
  */
 
 export const createListOfPoessessions = (possessionsArr, name) => {
-  return;
+  const discoMap = possessionsArr.map(clothingItem =>`${name} ${clothingItem}`)
+  return discoMap;
 };
 
 /**
@@ -72,7 +75,9 @@ export const createListOfPoessessions = (possessionsArr, name) => {
  */
 
 export const convertStringToNumbersArray = (numberString) => {
-  return;
+  const charsArr = numberString.split('+');
+  const turntoNumbersMap = charsArr.map(number => Number(number))
+  return turntoNumbersMap;
 };
 
 /**
@@ -84,7 +89,16 @@ export const convertStringToNumbersArray = (numberString) => {
  */
 
 export const createOddEvenArray = (numberString) => {
-  return;
+  const charsArr = numberString.split('+');
+  const turntoNumbersMap = charsArr.map(number => Number(number))
+  const evenOddMap = turntoNumbersMap.map(number => {
+    if (number % 2 === 0){
+      return "even";
+    }else {
+      return "odd";
+    }
+  })
+  return evenOddMap;
 };
 
 /**
@@ -97,7 +111,8 @@ export const createOddEvenArray = (numberString) => {
  */
 
 export const filterBooksBySearch = (booksArr, searchTerm) => {
-  return;
+  const filteredBooks = booksArr.filter(book => book.includes(searchTerm))
+  return filteredBooks;
 };
 
 /**
@@ -117,7 +132,7 @@ export const filterBooksBySearch = (booksArr, searchTerm) => {
  */
 
 export const formatStringArray = (stringArr) => {
-  const cleanedArr = stringArr.forEach((string) => {
+  const cleanedArr = stringArr.map((string) => {
     const cleanStr = string.trim().toLowerCase();
     return cleanStr;
   });
@@ -127,7 +142,16 @@ export const formatStringArray = (stringArr) => {
   const joinedString = cleanedArr.join("+");
 
   return joinedString;
-};
+  
+ 
+}
+
+  // console.log(???)
+
+  //const joinedString = cleanedArr.join("+");
+
+  //return joinedString;
+
 
 /**
  * A function that takes a string, cleans it and formats it based on a condition.
@@ -143,6 +167,8 @@ export const formatStringArray = (stringArr) => {
  */
 
 export const formatString = (string) => {
+  //const charsArr = string.match(/[a-zA-Z])
+
   return;
 };
 

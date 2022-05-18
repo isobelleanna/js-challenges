@@ -22,7 +22,13 @@
  */
 
 export const createRecipeString = (ingredientsArr) => {
-  return;
+  let sentence = "";
+        for (var i = 0; i < ingredientsArr.length; i++) {
+            sentence += ingredientsArr[i] + '+';
+          
+        };
+        sentence = sentence.slice(0, -1)
+  return sentence;
 };
 
 /**
@@ -33,7 +39,8 @@ export const createRecipeString = (ingredientsArr) => {
  */
 
 export const getFirstAndLastItems = (itemsArr) => {
-  return;
+  const newArray = [itemsArr[0], itemsArr[itemsArr.length -1]];
+  return newArray;
 };
 
 /**
@@ -44,7 +51,11 @@ export const getFirstAndLastItems = (itemsArr) => {
  */
 
 export const totalScores = (scoreArr) => {
-  return;
+  let total = 0;
+  for (let index = 0; index < scoreArr.length; index++) {
+    total += scoreArr[index];
+  }
+  return total;
 };
 
 /**
@@ -60,9 +71,13 @@ export const totalScores = (scoreArr) => {
  */
 
 export const totalRange = (rangeMax) => {
-  return;
+  let total = 0;
+        for (let i = 0; i < rangeMax + 1 ; i++) {
+            total += i; 
+        }
+        return total;
+    
 };
-
 /**
  * A function that takes an array and returns a NEW ARRAY where the last item has been moved to the front of the array and removed from the back.
  *
@@ -71,7 +86,10 @@ export const totalRange = (rangeMax) => {
  */
 
 export const moveFirstAndLastItems = (itemsArr) => {
-  return;
+  const newArray = [...itemsArr]
+  newArray.unshift(newArray.pop());
+  return newArray;
+
 };
 
 /**
@@ -89,7 +107,16 @@ export const moveFirstAndLastItems = (itemsArr) => {
  */
 
 export const removeEvenNumbers = (numberArr) => {
-  return;
+  const cloneNumberArr = [...numberArr];
+  const result = [];
+  for (let index = 0; index < cloneNumberArr.length; index++) {
+    if (cloneNumberArr[i] % 2 != 0) {
+      result.push(cloneNumberArr[i]);
+    }
+    return result;
+
+    
+  }
 };
 
 /**
