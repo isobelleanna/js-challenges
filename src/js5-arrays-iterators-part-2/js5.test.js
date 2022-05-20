@@ -200,7 +200,7 @@ describe("Testing checkPrimaryColours()", () => {
 
 });
 
-describe("Testing checkStringPalindrome()", () => {
+xdescribe("Testing checkStringPalindrome()", () => {
   it("Should return a Boolean", () => {
     expect(typeof checkStringPalindrome("red", "green")).toBe("boolean");
     expect(typeof checkStringPalindrome("green", "green")).toBe("boolean");
@@ -231,7 +231,7 @@ describe("Testing checkStringPalindrome()", () => {
   });
 });
 
-describe("Testing totalNestedScoresArr()", () => {
+xdescribe("Testing totalNestedScoresArr()", () => {
   const nestedScoreArr = [
     [3, 2, 1],
     [45, 6, 2],
@@ -265,7 +265,7 @@ describe("Testing totalNestedScoresArr()", () => {
   });
 });
 
-describe("Testing encryptString()", () => {
+xdescribe("Testing encryptString()", () => {
   it("Should return a string", () => {
     expect(typeof encryptString("defined")).toBe("string");
     expect(typeof encryptString("disco flex")).toBe("string");

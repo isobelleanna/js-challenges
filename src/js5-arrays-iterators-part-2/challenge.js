@@ -102,14 +102,14 @@ export const checkItemInstock = (toCheck) => {
     "blueberry",
     "melon",
   ];
-  const aisle = stockList.findIndex(toCheck);
-  const findStock = stockList.find(element => element === toCheck
-  if () {
-    return `${toCheck} is instock, it is on aisle ${aisle}.`;
+  let message = "";
+  const index = stockList.indexOf(toCheck);
+  if (index >= 0) {
+    message = `${toCheck} is instock, it is on aisle ${index}.`
   }else {
-    return "Sorry ITEM is not instock."
+    message = `Sorry ${toCheck} is not instock.` 
   }
-
+  return message;
 };
 
 /**
@@ -123,7 +123,10 @@ export const checkItemInstock = (toCheck) => {
  */
 
 export const checkPrimaryColours = (coloursArr) => {
-  return;
+  const primaryColours = ["red", "yellow", "blue"];
+  const colourCheck = coloursArr.every((color) => primaryColours.includes(color));
+  return colourCheck;
+  
 };
 
 /**
