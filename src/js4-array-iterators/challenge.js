@@ -167,7 +167,7 @@ export const formatStringArray = (stringArr) => {
  */
 
 export const formatString = (string) => {
-  //const charsArr = string.match(/[a-zA-Z])
+  const charsArr = string.match(/^[a-zA-Z]+$/)
 
   return;
 };

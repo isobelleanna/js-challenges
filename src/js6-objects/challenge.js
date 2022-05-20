@@ -22,6 +22,7 @@
  */
 export const getFurniturePrice = (furniture) => {
   /* Write code here */
+  return furniture.price;
 };
 
 /**
@@ -33,6 +34,8 @@ export const getFurniturePrice = (furniture) => {
  */
 export const setFurnitureStoreLocation = (furniture, location) => {
   /* Write code here */
+  furniture.location = location;
+  return furniture;
 };
 
 /**
@@ -47,6 +50,7 @@ export const setFurnitureStoreLocation = (furniture, location) => {
  */
 export const makeSpaceship = (name, noOfSeats, engineType, canTravelSolarSystems) => {
   /* Write code here */
+  return {name: name, noOfSeats: noOfSeats, engineType: engineType, canTravelSolarSystems: canTravelSolarSystems}
 };
 
 /* Intermediate Challenges */
@@ -60,6 +64,10 @@ export const makeSpaceship = (name, noOfSeats, engineType, canTravelSolarSystems
  */
 export const setUserName = (user, username) => {
   /* Write code here */
+  if (user.username == undefined) {
+    user.username = username
+  }
+  return user;
 };
 
 /**
@@ -71,6 +79,10 @@ export const setUserName = (user, username) => {
  */
 export const splitFullNameToFirstAndLast = (customer) => {
   /* Write code here */
+  const nameArray = customer.fullName.split(" ");
+  customer.firstName = nameArray[0];
+  customer.lastName = nameArray[1];
+  return customer;
 };
 
 /**
@@ -84,6 +96,7 @@ export const splitFullNameToFirstAndLast = (customer) => {
  */
 export const accessGivenKey = (object, key) => {
   /* Write code here */
+  return object[key];
 };
 
 /* Advanced Challenges */
@@ -97,6 +110,7 @@ export const accessGivenKey = (object, key) => {
  */
 export const getUserAddress = (user) => {
   /* Write code here */
+  return `${user.address.line1} ${user.address.line2} ${user.address.city} ${user.address.postcode}`
 };
 
 /**
@@ -109,6 +123,9 @@ export const getUserAddress = (user) => {
  */
 export const setSafeAllergens = (customer, allergenList) => {
   /* Write code here */
+  const findSafeAllergens = allergenList.filter(allergen => !customer.allergies.includes(allergen));
+  customer.safeAllergens = findSafeAllergens;
+  return customer;
 };
 
 /* Expert Challenge */
@@ -123,4 +140,9 @@ export const setSafeAllergens = (customer, allergenList) => {
  */
 export const mergeFurniture = (furnitureLocationData, furnitureProductData) => {
   /* Write code here */
+  const furnitureObject = {
+    ...furnitureProductData,
+    ...furnitureLocationData
+  }
+  return furnitureObject;
 };

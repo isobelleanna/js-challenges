@@ -70,7 +70,8 @@ export const sortCharactersAlphabetically = (charcterArr) => {
  */
 
 export const sortNumbersHighToLow = (numberArr) => {
-  return;
+  numberArr.sort((a, b) => (b-a)) 
+  return numberArr;
 };
 
 /**
@@ -101,7 +102,14 @@ export const checkItemInstock = (toCheck) => {
     "blueberry",
     "melon",
   ];
-  return;
+  const aisle = stockList.findIndex(toCheck);
+  const findStock = stockList.find(element => element === toCheck
+  if () {
+    return `${toCheck} is instock, it is on aisle ${aisle}.`;
+  }else {
+    return "Sorry ITEM is not instock."
+  }
+
 };
 
 /**
