@@ -107,16 +107,11 @@ export const moveFirstAndLastItems = (itemsArr) => {
  */
 
 export const removeEvenNumbers = (numberArr) => {
-  const cloneNumberArr = [...numberArr];
-  const result = [];
-  for (let index = 0; index < cloneNumberArr.length; index++) {
-    if (cloneNumberArr[i] % 2 != 0) {
-      result.push(cloneNumberArr[i]);
-    }
-    return result;
+  const filterEven = numberArr.filter(number => number % 2 != 0)
+    return filterEven;
 
     
-  }
+
 };
 
 /**
@@ -132,7 +127,12 @@ export const removeEvenNumbers = (numberArr) => {
  */
 
 export const generateAverage = (numberArr) => {
-  return;
+  let total = 0;
+  for (let index = 0; index < numberArr.length; index++) {
+    total += numberArr[index];
+  }
+  const average = total / numberArr.length;
+  return Math.round(average) || 0;
 };
 
 /**
@@ -143,7 +143,11 @@ export const generateAverage = (numberArr) => {
  */
 
 export const reverseOrder = (toReverseArr) => {
-  return;
+  const reveredArr = [];
+  for (let i = toReverseArr.length - 1; i >= 0; i--) {
+    reveredArr.push(toReverseArr[i]);
+  }
+  return reveredArr;
 };
 
 /**
@@ -165,7 +169,16 @@ export const reverseOrder = (toReverseArr) => {
  */
 
 export const generateHighscores = (playersArr, scoresArr) => {
-  return;
+  if (playersArr.length !== scoresArr.length || !playersArr.length) return "invalid inputs";
+  let string = "";
+  const newArr = []
+  for (let i = 0; i < playersArr.length; i++) {
+    let place = i + 1
+    string = `P:${place} ${playersArr[i]} scored ${scoresArr[i]}`;
+    newArr.push(string);
+    
+  }
+  return newArr;
 };
 
 /**
@@ -195,5 +208,20 @@ export const generateHighscores = (playersArr, scoresArr) => {
 // };
 
 export const encryptString = (toEncrypt) => {
-  return;
+  const arr = toEncrypt.split("");
+  const a = []
+  const b = []
+  const c = []
+  for (let i = 0; i < arr.length; i = i + 3) {
+    a.push(arr[i]) ;
+  }
+  for (let i = 1; i < arr.length; i = i + 3) {
+    b.push(arr[i]);
+  }
+  for (let i = 2; i < arr.length; i = i + 3) {
+    c.push(arr[i]);
+  }
+
+  let encryption = a + b + c;
+  return encryption.replace(/,/g,"")
 };
