@@ -167,9 +167,16 @@ export const formatStringArray = (stringArr) => {
  */
 
 export const formatString = (string) => {
-  const charsArr = string.match(/^[a-zA-Z]+$/)
+  const regex = /[A-Za-z]/g;
+  const charsArr = string.match(regex);
+  const emptyArr = [];
+  if (charsArr === null) {
+    return emptyArr;
+  }else {
+  const finishedArr = charsArr.map((letter, index) => (index % 2 === 0 ? letter.toUpperCase() : letter.toLowerCase()));
+  return finishedArr;
+  }
 
-  return;
 };
 
 /**
@@ -196,5 +203,17 @@ export const formatString = (string) => {
  */
 
 export const fizzBuzz = (mixedArray) => {
-  return;
+  const numArr = mixedArray.filter((item => item > 0 && Number(item)));
+
+  const fizzBuzzArray = numArr.map((number) => {
+    let fizzOrBuzz = "";
+    if (number % 3 === 0){
+      fizzOrBuzz += "Fizz"
+    }
+    if (number % 5 === 0){
+      fizzOrBuzz += "Buzz"
+    }
+    return fizzOrBuzz || number.toString();
+  })
+  return fizzBuzzArray;
 };
