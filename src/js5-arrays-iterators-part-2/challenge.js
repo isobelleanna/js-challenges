@@ -143,7 +143,13 @@ export const checkPrimaryColours = (coloursArr) => {
  */
 
 export const checkStringPalindrome = (stringOne) => {
-  return;
+  const charsArr = stringOne.split('');
+  charsArr.reverse();
+  const palindrome = charsArr.join("");
+  if (stringOne === palindrome){
+    return true;
+  }
+  return false;
 };
 
 /**
